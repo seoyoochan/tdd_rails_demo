@@ -1,0 +1,39 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Preferences</th>
+        <th>Type</th>
+        <th>Cuisine</th>
+        <th>Servings</th>
+        <th>Time</th>
+        <th>Difficulty</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Food</td>
+        <td>Vegan</td>
+        <td>Breakfast</td>
+        <td>Mexican</td>
+        <td>3</td>
+        <td>20 Min</td>
+        <td>Easy</td>
+        <td><a href="#" class="btn btn-warning">show</a></td>
+      </tr>
+      <tr>
+        <td>Bulgogi</td>
+        <td>Meat</td>
+        <td>Dinner</td>
+        <td>Korean</td>
+        <td>4</td>
+        <td>10 Min</td>
+        <td>Easy</td>
+        <td><a href="#" class="btn btn-warning">show</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<%= link_to "Create a Recipe", new_recipe_path, { class: "btn btn-primary pull-right" } %>

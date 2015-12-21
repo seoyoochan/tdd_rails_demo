@@ -1,14 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TddRailsDemo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Recipeep :: Easy, Fun, Tasty</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#res-navbar-header" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Recipeep", root_path, { class: "navbar-brand" } %>
+    </div>
+    <div class="collapse" id="res-navbar-header">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><a href="#">Food Preferences</a></li>
+        <li><a href="#">Food Type</a></li>
+        <li><a href="#">Food Cuisine</a></li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "Home", root_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipe <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Food Preferences</a></li>
+            <li><a href="#">Food Types</a></li>
+            <li><a href="#">Food Cuisine</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Create a Recipe</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+      </ul>
+    </div>
+  </nav>
+  <nav class="nav navbar-nav navbar-left hidden-xs sideNav">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <a href="#">
+          <strong data-toggle="collapse" data-target="#foodPreferences">
+            Food Preferences
+          </strong>
+        </a>
+        <div class="collapse in" id="foodPreferences">
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="#">Vegetarian</a></li>
+            <li role="presentation"><a href="#">Vegan</a></li>
+            <li role="presentation"><a href="#">Meat</a></li>
+            <li role="presentation"><a href="#">Diary</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <a href="#">
+          <strong data-toggle="collapse" data-target="#foodType">
+            Food Type
+          </strong>
+        </a>
+        <div class="collapse in" id="foodType">
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="#">Breakfast</a></li>
+            <li role="presentation"><a href="#">Lunch</a></li>
+            <li role="presentation"><a href="#">Dinner</a></li>
+            <li role="presentation"><a href="#">Sides</a></li>
+            <li role="presentation"><a href="#">Dessert</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <a href="#">
+          <strong data-toggle="collapse" data-target="#foodCuisine">
+            Food Cuisine
+          </strong>
+        </a>
+        <div class="collapse in" id="foodCuisine">
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="#">Korean</a></li>
+            <li role="presentation"><a href="#">Japanese</a></li>
+            <li role="presentation"><a href="#">Chinese</a></li>
+            <li role="presentation"><a href="#">Italian</a></li>
+            <li role="presentation"><a href="#">Indian</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div class="contents row">
+    <div class="center-block col-md-9 page">
+      <%= yield %>
+    </div>
+  </div>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
